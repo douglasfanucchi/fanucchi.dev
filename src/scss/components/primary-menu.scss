@@ -1,0 +1,36 @@
+.primary-menu {
+    $this: &;
+
+    label[for="hamburger-menu"] {
+        height: 22px;
+        display: block;
+        cursor: pointer;
+
+        #{$this}__hamburger {
+            display: block;
+            width: 23px;
+            height: 2px;
+            background-color: $dark;
+            cursor: pointer;
+            position: relative;
+    
+            &::before,
+            &::after {
+                content: " ";
+                height: 100%;
+                width: 100%;
+                background-color: inherit;
+                position: absolute;
+                top: 8px;
+            }
+    
+            &::after {
+                top: 16px;
+            }
+        }
+    }
+
+    &__list {
+        display: none;
+    }
+}

@@ -10,6 +10,7 @@
     &__container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         #{$this}__logo {
             width: 50px;

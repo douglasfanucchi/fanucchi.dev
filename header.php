@@ -14,5 +14,16 @@
         <figure class="header__logo">
             <?php echo get_custom_logo() ? get_custom_logo() : bloginfo('name'); ?>
         </figure>
+        <nav class="primary-menu">
+            <label for="hamburger-menu">
+                <span id="hamburger-menu" class="primary-menu__hamburger"></span>
+            </label>
+            <ul class="primary-menu__list">
+                <li class="primary-menu__item"></li>
+                <li class="primary-menu__item"></li>
+                <li class="primary-menu__item"></li>
+                <li class="primary-menu__item"></li>
+            </ul>
+        </nav>
     </div>
 </header>
