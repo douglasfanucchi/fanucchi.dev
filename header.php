@@ -10,7 +10,7 @@
 <body>
 
 <header id="header" class="header">
-    <div class="container">
+    <div class="header__container container">
         <figure class="header__logo">
             <?php echo get_custom_logo() ? get_custom_logo() : bloginfo('name'); ?>
         </figure>
