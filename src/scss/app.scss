@@ -1,3 +1,9 @@
+@import "./reset.scss";
+@import "./common/variables.scss";
+
+@import "./components/container.scss";
+@import "./components/header.scss";
+
 body {
-    background-color: #000;
+    background-color: $color-primary;
 }

@@ -8,3 +8,11 @@
     <title><?php bloginfo('title'); ?></title>
 </head>
 <body>
+
+<header id="header" class="header">
+    <div class="container">
+        <figure class="header__logo">
+            <?php echo get_custom_logo() ? get_custom_logo() : bloginfo('name'); ?>
+        </figure>
+    </div>
+</header>
