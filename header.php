@@ -15,9 +15,9 @@
             <?php echo get_custom_logo() ? get_custom_logo() : bloginfo('name'); ?>
         </figure>
         <nav class="primary-menu">
-            <label for="hamburger-menu">
-                <span id="hamburger-menu" class="primary-menu__hamburger"></span>
-            </label>
+            <button class="primary-menu__hamburger-button">
+                <span class="primary-menu__hamburger"></span>
+            </button>
             <ul class="primary-menu__list">
                 <li class="primary-menu__item"></li>
                 <li class="primary-menu__item"></li>

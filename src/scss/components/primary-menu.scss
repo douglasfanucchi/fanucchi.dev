@@ -1,10 +1,12 @@
 .primary-menu {
     $this: &;
 
-    label[for="hamburger-menu"] {
+    .primary-menu__hamburger-button {
         height: 22px;
         display: block;
         cursor: pointer;
+        border: none;
+        background: none;
 
         #{$this}__hamburger {
             display: block;
@@ -21,11 +23,12 @@
                 width: 100%;
                 background-color: inherit;
                 position: absolute;
-                top: 8px;
+                bottom: 8px;
+		        left: 0;
             }
     
             &::after {
-                top: 16px;
+                top: 8px;
             }
         }
     }
