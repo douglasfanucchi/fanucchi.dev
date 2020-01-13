@@ -5,4 +5,6 @@ const $header = document.getElementById("header")
 
 const body = new Body($body)
 
-body.setMarginTop($header)
+window.addEventListener('load', () => {
+    body.setMarginTop($header)
+})
