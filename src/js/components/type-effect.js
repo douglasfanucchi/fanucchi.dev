@@ -1,5 +1,5 @@
 export default class TypeEffect {
-    constructor($element, speed = 500) {
+    constructor($element, speed = 100) {
         this.$element   = $element
         this.speed      = speed
         this.words      = this.$element.getAttribute("data-words").split("|")
@@ -24,7 +24,7 @@ export default class TypeEffect {
             const interval = setInterval(() => {
                 if( letters.length === 0 ) {
                     clearInterval(interval)
-                    resolve()
+                    setTimeout( () => resolve(), 1000 )
                     return
                 }
 
