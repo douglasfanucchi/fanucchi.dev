@@ -58,12 +58,48 @@
             }
 
             & + #{$this}__list {
-                display: block;
+                height: 100vh;
+                opacity: 0.5;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                justify-content: center;
+
+                #{$this}__item {
+                    font-size: $font-size-h1;
+
+                    a {
+                        color: $clear;
+                        text-decoration: none;
+
+                        &::after {
+                            content: " ";
+                            display: block;
+                            height: 2px;
+                            background-color: $clear;
+                            transform-origin: left;
+                            transform: scaleX(0);
+                            transition: transform 0.2s;
+                        }
+                        
+                        &:hover::after {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
             }
         }
     }
 
     &__list {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        height: 0;
+        overflow-y: scroll;
+        background-color: $dark;
+        transition: opacity 1s;
     }
 }
