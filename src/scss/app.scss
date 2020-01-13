@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
     
     @media screen and (min-width: 992px) {
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 50px);
         margin: 25px;
     }
 }
