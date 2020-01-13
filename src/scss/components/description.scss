@@ -1,0 +1,22 @@
+.description {
+    $this: &;
+
+    margin-top: 30px;
+
+    &__text {
+        font-size: $font-size-h1;
+        font-weight: normal;
+        line-height: 4rem;
+
+        #{$this}__highlight {
+            background-color: $dark;
+            color: $clear;
+            padding: 5px;
+
+            &::after {
+                content: "_";
+                animation: fadeInOut 0.5s infinite;
+            }
+        }
+    }
+}

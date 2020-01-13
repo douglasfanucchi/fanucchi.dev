@@ -1,9 +1,11 @@
 @import "./reset.scss";
 @import "./common/variables.scss";
+@import "./common/effects.scss";
 
 @import "./components/container.scss";
 @import "./components/header.scss";
 @import "./components/primary-menu.scss";
+@import "./components/description.scss";
 
 html {
     background-color: $clear;
