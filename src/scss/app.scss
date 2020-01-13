@@ -5,6 +5,15 @@
 @import "./components/header.scss";
 @import "./components/primary-menu.scss";
 
+html {
+    background-color: $clear;
+}
+
 body {
     background-color: $color-primary;
+    
+    @media screen and (min-width: 992px) {
+        min-height: calc(100vh - 100px);
+        margin: 25px;
+    }
 }
