@@ -39,8 +39,25 @@ export class ProjectsCategories {
 
     bindEventListeners() {
         this.$items.forEach( item => {
-            item.addEventListener("click", () => this.dispatchEvent(item))
+            item.addEventListener("click", () => {
+                this.manageActiveClass(item)
+                this.dispatchEvent(item)
+            })
         })
+    }
+
+    manageActiveClass($newActive) {
+        this.removeActive()
+        this.setActive($newActive)
+    }
+
+    removeActive() {
+        let $active = [].filter.call(this.$items, $item => $item.classList.contains("active") ).shift()
+        $active.classList.remove("active")
+    }
+
+    setActive($newActive) {
+        $newActive.classList.add("active")
     }
 
     dispatchEvent(item) {
