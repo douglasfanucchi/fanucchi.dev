@@ -52,3 +52,20 @@ export class ProjectsCategories {
         item.dispatchEvent(event)
     }
 }
+
+export class ProjectsList {
+    constructor($element, ProjectsState) {
+        this.$element      = $element
+        this.ProjectsState = ProjectsState
+
+        this.bindStateListener()
+    }
+
+    bindStateListener() {
+        this.ProjectsState.pushListener(this.stateListener)
+    }
+
+    stateListener = (data) => {
+        console.log( this.$element, data )
+    }
+}
