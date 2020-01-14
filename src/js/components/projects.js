@@ -30,9 +30,9 @@ export class Projects {
 }
 
 export class ProjectsCategories {
-    constructor($categories, state) {
-        this.$items = $categories.querySelectorAll(".projects__category")
-        this.state  = state
+    constructor($categories, ProjectsState) {
+        this.$items         = $categories.querySelectorAll(".projects__category")
+        this.ProjectsState  = ProjectsState
 
         this.bindEventListeners()
     }
