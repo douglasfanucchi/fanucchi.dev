@@ -1,7 +1,54 @@
-export default class Projects {
+export class Projects {
     constructor($element) {
-        this.$element    = $element
-        this.$categories = this.$element.querySelector(".projects__categories")
-        this.$list       = this.$element.querySelector(".projects__list")
+        this.state = {
+            data: {
+                currentCategory: null
+            },
+            listeners: [],
+            pushListener: function(func) {
+                this.listeners.push(func)
+            }
+        }
+
+        this.$element = $element
+
+        this.bindEventListeners()
+    }
+
+    setState = (e) => {
+        this.state.data.currentCategory = e.detail.category
+        this.stateChanged()
+    }
+
+    stateChanged() {
+        this.state.listeners.forEach(func => func(this.state.data))
+    }
+
+    bindEventListeners() {
+        this.$element.addEventListener("change-state", this.setState)
+    }
+}
+
+export class ProjectsCategories {
+    constructor($categories, state) {
+        this.$items = $categories.querySelectorAll(".projects__category")
+        this.state  = state
+
+        this.bindEventListeners()
+    }
+
+    bindEventListeners() {
+        this.$items.forEach( item => {
+            item.addEventListener("click", () => this.dispatchEvent(item))
+        })
+    }
+
+    dispatchEvent(item) {
+        const event = new CustomEvent("change-state", {
+            bubbles: true,
+            detail: { category: item.getAttribute("data-category") }
+        })
+
+        item.dispatchEvent(event)
     }
 }
