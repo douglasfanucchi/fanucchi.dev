@@ -26,15 +26,17 @@
                     transform: scaleX(0);
                     transition: transform 0.2s;
                 }
-
-                &:hover,
-                &.active {
+            }
+            
+            &.active,
+            &:hover {
+                .button{
                     color: $dark;
-                    &::after {
+
+                    &::after{
                         transform: scaleX(1);
                     }
                 }
-
             }
 
             &:not(:last-child) {
