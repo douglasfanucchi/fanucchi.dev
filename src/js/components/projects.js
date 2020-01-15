@@ -74,6 +74,7 @@ export class ProjectsList {
     constructor($element, ProjectsState) {
         this.$element      = $element
         this.$items        = $element.querySelectorAll(".projects__item")
+        this.filteredItems = this.$items
         this.ProjectsState = ProjectsState
 
         this.bindStateListener()
@@ -82,22 +83,39 @@ export class ProjectsList {
     }
 
     bindStateListener() {
-        this.ProjectsState.pushListener(this.stateListener)
+        this.ProjectsState.pushListener(this.setFilteredItems)
     }
 
     bindEventListeners() {
-        window.addEventListener("resize", this.organizeItems)
+        window.addEventListener("resize", () => this.organizeItems(this.$filteredItems))
     }
 
-    stateListener = (data) => {
-        console.log( this.$element, data )
+    setFilteredItems = (state) => {
+        const { currentCategory: category } = state
+
+        this.$filteredItems = [].filter.call(this.$items, $item => $item.getAttribute("data-category") === category)
+
+        if( this.$filteredItems.length === 0)
+            this.$filteredItems = this.$items
+
+        this.manageHideClass()
+        this.organizeItems(this.$filteredItems)
     }
 
-    organizeItems = () => {
+    manageHideClass() {
+        if( this.$filteredItems.length === this.$items.length ) {
+            this.$items.forEach($item => $item.classList.remove("hide"))
+            return
+        }
+
+        this.$items.forEach($item => $item.classList.toggle("hide", !this.$filteredItems.includes($item)))
+    }
+
+    organizeItems($items = this.$items) {
         const itemOffsetWidth = this.$items[0].offsetWidth + 5
         const itemsPerRow     = Math.round( this.$element.offsetWidth / itemOffsetWidth )
 
-        this.$items.forEach(($item, index, arr) => {
+        $items.forEach(($item, index, arr) => {
             const $previousItem = arr[index - 1]
             const $aboveItem    = arr[index - itemsPerRow]
 
