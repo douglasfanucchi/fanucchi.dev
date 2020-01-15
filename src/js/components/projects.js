@@ -73,16 +73,60 @@ export class ProjectsCategories {
 export class ProjectsList {
     constructor($element, ProjectsState) {
         this.$element      = $element
+        this.$items        = $element.querySelectorAll(".projects__item")
         this.ProjectsState = ProjectsState
 
         this.bindStateListener()
+        this.bindEventListeners()
+        this.organizeItems()
     }
 
     bindStateListener() {
         this.ProjectsState.pushListener(this.stateListener)
     }
 
+    bindEventListeners() {
+        window.addEventListener("resize", this.organizeItems)
+    }
+
     stateListener = (data) => {
         console.log( this.$element, data )
+    }
+
+    organizeItems = () => {
+        const itemsPerRow = Math.round( this.$element.offsetWidth / (this.$items[0].offsetWidth + 5) )
+
+        this.$items.forEach(($item, index, arr) => {
+            const $previousItem = arr[index - 1]
+            const $aboveItem    = arr[index - itemsPerRow]
+
+            const left = this.getCurrentItemLeft($item, $previousItem)
+            const top  = this.getCurrentItemTop($aboveItem)
+
+            $item.style.top  = `${top}px`
+            $item.style.left = `${left}px`
+        })
+
+        this.$element.style.height = "1000px"
+    }
+
+    getCurrentItemLeft( $currentItem, $previousItem ) {
+        if( !$previousItem )
+            return 0
+
+        const left  = parseInt($previousItem.style.left) + $previousItem.offsetWidth + 5
+        const right = left + $currentItem.offsetWidth
+
+        if( right > this.$element.offsetWidth )
+            return 0
+
+        return left
+    }
+
+    getCurrentItemTop($aboveItem) {
+        if(!$aboveItem)
+            return 0
+
+        return parseInt($aboveItem.style.top) + $aboveItem.offsetHeight + 5
     }
 }

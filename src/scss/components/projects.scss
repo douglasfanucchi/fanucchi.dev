@@ -44,4 +44,29 @@
             }
         }
     }
+
+    &__list {
+        margin-top: 15px;
+        list-style: none;
+        position: relative;
+
+        #{$this}__item {
+            max-width: calc(33.33333333333% - 5px);
+            width: 100%;
+            margin-bottom: 10px;
+            position: absolute;
+
+            img {
+                width: 100%;
+            }
+
+            @media screen and (max-width: 768px) {
+                max-width: calc(50% - 5px);
+            }
+
+            @media screen and (max-width: 480px) {
+                max-width: calc(100%);
+            }
+        }
+    }
 }
