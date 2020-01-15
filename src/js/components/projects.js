@@ -94,7 +94,8 @@ export class ProjectsList {
     }
 
     organizeItems = () => {
-        const itemsPerRow = Math.round( this.$element.offsetWidth / (this.$items[0].offsetWidth + 5) )
+        const itemOffsetWidth = this.$items[0].offsetWidth + 5
+        const itemsPerRow     = Math.round( this.$element.offsetWidth / itemOffsetWidth )
 
         this.$items.forEach(($item, index, arr) => {
             const $previousItem = arr[index - 1]
