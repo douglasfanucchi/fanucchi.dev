@@ -6,6 +6,21 @@ export default class Hamburger {
     }
 
     addListeners() {
-        this.$element.addEventListener("click", () => this.$element.classList.toggle("primary-menu__hamburger-button--active") )
+        this.$element.addEventListener("click", () => {
+            this.setOffsetTop()
+            this.setOffsetLeft()
+            this.$element.style.top  = `${this.offsetTop}px`
+            this.$element.style.left = `${this.offsetLeft}px`
+
+            this.$element.classList.toggle("primary-menu__hamburger-button--active")
+        })
+    }
+
+    setOffsetTop() {
+        this.offsetTop = this.$element.getBoundingClientRect().top
+    }
+
+    setOffsetLeft() {
+        this.offsetLeft = this.$element.getBoundingClientRect().left
     }
 }
