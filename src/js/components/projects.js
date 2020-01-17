@@ -91,12 +91,11 @@ export class ProjectsList {
             this.organizeItems(this.$filteredItems)
 
             // Code to fix bug on resizing
-            this.$items.forEach($item => {
-                $item.addEventListener('transitionend', () =>  this.organizeItems(this.$filteredItems))
-            })
         })
 
-        
+        this.$items.forEach($item => {
+            $item.addEventListener('transitionend', () =>  this.organizeItems(this.$filteredItems))
+        })
     }
 
     setFilteredItems = (state) => {
