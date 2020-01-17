@@ -4,7 +4,7 @@
         <li data-category="plugins" class="projects__category"><button class="button">Plugins</button></li>
         <li data-category="themes" class="projects__category"><button class="button">Themes</button></li>
     </ul>
-    <ul class="projects__list" data-items='<?php echo json_encode($data) ?>'>
+    <ul class="projects__list">
         <li class="projects__item" data-category="plugins">
             <img src="https://i.picsum.photos/id/765/390/270.jpg" alt="1">
         </li>
@@ -23,5 +23,24 @@
         <li class="projects__item" data-category="themes">
             <img src="https://i.picsum.photos/id/289/360/218.jpg" alt="6">
         </li>
+        <li class="projects__item" data-category="themes">
+            <img src="https://i.picsum.photos/id/227/360/240.jpg" alt="5">
+        </li>
+        <li class="projects__item" data-category="plugins">
+            <img src="https://i.picsum.photos/id/219/360/218.jpg" alt="6">
+        </li>
+        <li class="projects__item" data-category="plugins">
+            <img src="https://i.picsum.photos/id/297/360/240.jpg" alt="5">
+        </li>
+        <li class="projects__item" data-category="plugins">
+            <img src="https://i.picsum.photos/id/259/360/218.jpg" alt="6">
+        </li>
+        <li class="projects__item" data-category="themes">
+            <img src="https://i.picsum.photos/id/259/360/218.jpg" alt="6">
+        </li>
+        <li class="projects__item" data-category="themes">
+            <img src="https://i.picsum.photos/id/259/360/218.jpg" alt="6">
+        </li>
     </ul>
 </section>
+<p style="font-size: 5rem">aaa</p>

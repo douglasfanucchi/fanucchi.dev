@@ -55,15 +55,14 @@
             width: 100%;
             margin-bottom: 10px;
             position: absolute;
-            transition: 0.5s all;
+            transition: 0.2s all;
 
             img {
                 width: 100%;
             }
 
             &.hide {
-                opacity: 0;
-                visibility: hidden;
+                transform: scale(0);
             }
 
             @media screen and (max-width: 768px) {

@@ -87,12 +87,16 @@ export class ProjectsList {
     }
 
     bindEventListeners() {
-        window.addEventListener("resize", () => this.organizeItems(this.$filteredItems))
+        window.addEventListener("resize", () => {
+            this.organizeItems(this.$filteredItems)
 
-        // Code to fix bug on resizing
-        this.$items.forEach($item => {
-            $item.addEventListener('transitionend', () =>  this.organizeItems(this.$filteredItems))
+            // Code to fix bug on resizing
+            this.$items.forEach($item => {
+                $item.addEventListener('transitionend', () =>  this.organizeItems(this.$filteredItems))
+            })
         })
+
+        
     }
 
     setFilteredItems = (state) => {
@@ -117,7 +121,7 @@ export class ProjectsList {
     }
 
     organizeItems($items = this.$items) {
-        const itemOffsetWidth = this.$items[0].offsetWidth + 5
+        const itemOffsetWidth = $items[0].offsetWidth + 5
         const itemsPerRow     = Math.round( this.$element.offsetWidth / itemOffsetWidth )
 
         $items.forEach(($item, index, arr) => {
@@ -131,7 +135,7 @@ export class ProjectsList {
             $item.style.left = `${left}px`
         })
 
-        this.$element.style.height = "1000px"
+        this.setWrapperHeight()
     }
 
     getCurrentItemLeft( $currentItem, $previousItem ) {
@@ -152,5 +156,9 @@ export class ProjectsList {
             return 0
 
         return parseInt($aboveItem.style.top) + $aboveItem.offsetHeight + 5
+    }
+
+    setWrapperHeight() {
+        this.$element.style.marginBottom = `${this.$element.scrollHeight + 50}px`
     }
 }
