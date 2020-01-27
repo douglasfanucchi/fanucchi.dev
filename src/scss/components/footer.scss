@@ -1,0 +1,19 @@
+.footer {
+    padding: 50px;
+    height: 200px;
+    background-color: #eee;
+    color: $text-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    &__copyright {
+        font-size: $font-size-big;
+
+        a {
+            color: inherit;
+            font-weight: bold;
+        }
+    }
+}
