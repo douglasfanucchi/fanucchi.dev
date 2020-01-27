@@ -43,4 +43,3 @@
         </li>
     </ul>
 </section>
-<p style="font-size: 5rem">aaa</p>
