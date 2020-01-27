@@ -12,6 +12,7 @@ class Enqueue {
     }
 
     public function enqueue_frontend_scripts() {
+        wp_enqueue_script('jquery');
         $this->enqueue->enqueue('js', 'app', []);
         $this->enqueue->enqueue('css', 'app', []);
     }
