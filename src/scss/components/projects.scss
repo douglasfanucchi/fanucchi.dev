@@ -49,7 +49,6 @@
         margin-top: 15px;
         list-style: none;
         position: relative;
-        cursor: pointer;
 
         #{$this}__item {
             max-width: calc(33.33333333333% - 5px);
@@ -127,6 +126,23 @@
 
                     &:not(:last-child) {
                         margin-right: 5px
+                    }
+                }
+
+                &__read-more {
+                    align-self: flex-end;
+                    padding: 5px 10px;
+                    background: $clear;
+                    color: $dark;
+                    border: 1px solid $dark;
+                    opacity: 1;
+                    cursor: pointer;
+                    transition: color, background-color 0.2s;
+                    font-family: inherit;
+
+                    &:hover {
+                        background-color: $dark;
+                        color: $clear;
                     }
                 }
             }

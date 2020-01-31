@@ -21,6 +21,7 @@
                     <li class="item__tecnology">MySQL</li>
                     <li class="item__tecnology">JavaScript</li>
                 </ul>
+                <button class="item__read-more">Saiba mais</button>
             </div>
         </li>
         <li class="projects__item" data-category="themes">
