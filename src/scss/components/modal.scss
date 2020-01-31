@@ -17,6 +17,7 @@
     padding: 50px;
     transition: opacity 0.2s;
     border: 1px solid $dark;
+    -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
         display: none;
