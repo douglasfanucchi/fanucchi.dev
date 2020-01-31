@@ -50,4 +50,15 @@
             </figure>
         </li>
     </ul>
+    <div class="modal">
+        <h3 class="modal__title">Meu projeto - <a class="modal__demo" target="_blank" href="#">Visualizar</a></h3>
+        <p class="modal__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam omnis eos, voluptatum quos, maxime pariatur perspiciatis, ea nemo laudantium magnam ipsum minima nostrum! Cupiditate, adipisci! Aut quia quis doloremque perspiciatis, nemo obcaecati sit vero rem quibusdam alias temporibus magni eaque ipsa quae ducimus numquam cupiditate facere repellendus tempore. Sint animi neque non eos delectus, similique, dolorem provident, velit dolore laboriosam nobis tempore corporis nesciunt id blanditiis! Incidunt eos quaerat sapiente dolores recusandae, rerum pariatur excepturi cum voluptatibus nihil, fugit eum ab sequi. Repudiandae eum molestias expedita odio quos voluptatibus. Esse rerum iste quia dignissimos praesentium repellendus odit cumque voluptatibus voluptate!
+        </p>
+        <ul class="modal__useful-links">
+            <h4 class="list-title">Links Uteis</h4>
+            <li><a href="">Download</a></li>
+            <li><a href="">Documentacao</a></li>
+        </ul>
+    </div>
 </section>

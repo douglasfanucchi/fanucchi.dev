@@ -13,9 +13,9 @@ const $projects = $body.querySelector(".projects")
 const $projectsCategories = $projects.querySelector(".projects__categories")
 const $projectsList = $projects.querySelector(".projects__list")
 
+const $modal = $projects.querySelector('.modal');
 $projectsList.querySelectorAll('.item__content').forEach( $itemContent => {
     const $button = $itemContent.querySelector(".item__read-more") 
-    const $modal  = $itemContent.querySelector(".item__modal")
 
     if(!$button || !$modal) return
 
