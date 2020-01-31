@@ -5,14 +5,12 @@
         <li data-category="themes" class="projects__category"><button class="button">Themes</button></li>
     </ul>
     <ul class="projects__list">
-        <li class="projects__item" data-category="plugins">
-            <figure class="item__thumb">
-                <img src="https://i.picsum.photos/id/765/390/270.jpg" alt="1">
-            </figure>
+    <?php for($i = 0; $i < 6; $i++): ?>
+        <li style="background-image: url('https://i.picsum.photos/id/765/390/270.jpg')" class="projects__item" data-category="<?php echo $i % 2 === 0 ? 'plugins' : 'themes' ?>">
             <div class="item__content">
                 <h3 class="item__title">Meu projeto</h3>
                 <p class="item__description">
-                    Plugin que integra mercado pago com funcionalidade de assinatura!
+                    <?php for($j = 0; $j <= $i + 4; $j++): echo 'Plugin que integra mercado pago com funcionalidade de assinatura!'; endfor; ?>
                 </p>
                 <ul class="item__tecnologies">
                     <h3 class="title">Tecnologias: </h3>
@@ -24,31 +22,7 @@
                 <button class="item__read-more">Saiba mais</button>
             </div>
         </li>
-        <li class="projects__item" data-category="themes">
-            <figure class="item__thumb">
-                <img src="https://i.picsum.photos/id/825/360/360.jpg" alt="2">
-            </figure>
-        </li>
-        <li class="projects__item" data-category="plugins">
-            <figure class="item__thumb">
-                <img src="https://i.picsum.photos/id/768/360/238.jpg" alt="3">
-            </figure>
-        </li>
-        <li class="projects__item" data-category="plugins">
-            <figure class="item__thumb">
-                <img src="https://i.picsum.photos/id/690/360/240.jpg" alt="4">
-            </figure>
-        </li>
-        <li class="projects__item" data-category="themes">
-            <figure class="item__thumb">
-                <img src="https://i.picsum.photos/id/237/360/240.jpg" alt="5">
-            </figure>
-        </li>
-        <li class="projects__item" data-category="themes">
-            <figure class="item__thumb">
-                <img src="https://i.picsum.photos/id/289/360/218.jpg" alt="6">
-            </figure>
-        </li>
+    <?php endfor; ?>
     </ul>
     <div class="modal">
         <button class="modal__close">
