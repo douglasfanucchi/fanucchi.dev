@@ -3,6 +3,7 @@ import Hamburger from "./components/hamburger"
 import TypeEffect from "./components/type-effect"
 import { Projects, ProjectsCategories, ProjectsList } from "./components/projects"
 import ReadMore from "./components/read-more"
+import Modal from "./components/modal"
 
 const $body   = document.querySelector("body")
 const $header = document.getElementById("header")
@@ -34,4 +35,5 @@ window.addEventListener('load', () => {
     const {state: ProjectsState} = new Projects($projects)
     new ProjectsCategories($projectsCategories, ProjectsState)
     new ProjectsList($projectsList, ProjectsState)
+    new Modal($modal)
 })
