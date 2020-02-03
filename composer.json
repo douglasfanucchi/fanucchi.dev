@@ -1,5 +1,11 @@
 {
     "require": {
-        "wpackio/enqueue": "^2.1"
+        "wpackio/enqueue": "^2.1",
+        "jjgrainger/posttypes": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fanucchi\\": "inc/classes"
+        }
     }
 }
