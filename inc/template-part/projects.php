@@ -1,8 +1,18 @@
+<?php
+    $terms = get_terms('projects_categories');
+?>
 <section class="projects container">
     <ul class="projects__categories">
-        <li class="projects__category active"><button class="button">All</button></li>
-        <li data-category="plugins" class="projects__category"><button class="button">Plugins</button></li>
-        <li data-category="themes" class="projects__category"><button class="button">Themes</button></li>
+        <li class="projects__category active"><button class="button">Todos</button></li>
+        <?php
+            if($terms):
+                foreach( $terms as $term ):
+                    ?>
+                    <li data-category="<?php echo $term->slug; ?>" class="projects__category"><button class="button"><?php echo $term->name; ?></button></li>
+                    <?php
+                endforeach;
+            endif;
+        ?>
     </ul>
     <ul class="projects__list">
     <?php
@@ -22,7 +32,7 @@
 
                 $tecnologias = get_post_meta($post->ID, 'attributes', true)['tecnologies'];
             ?>
-            <li style="background-image: url('<?php echo $thumbnail; ?>')" class="projects__item" data-category="<?php the_category(); ?>">
+            <li style="background-image: url('<?php echo $thumbnail; ?>')" class="projects__item" data-category="<?php echo get_the_terms($post, 'projects_categories')[0]->slug ?>">
                 <div class="item__content">
                     <h3 class="item__title"><?php echo strip_tags(get_the_title()); ?></h3>
                     <p class="item__description"><?php echo strip_tags(get_the_content()); ?></p>
