@@ -30,6 +30,20 @@ add_action('save_post_projects', function( $post_id, $post, $update ) {
     update_post_meta($post_id, 'attributes', $data);
 }, 10, 3);
 
+add_action('init', function() {
+    $args = [
+        'label' => 'Categorias',
+        'labels' => [
+            'add_new' => 'Adicionar Nova',
+            'add_new_item' => 'Adicionar Nova Categoria',
+            'not_found' => 'Nenhuma categoria encontrada',
+        ],
+        'show_in_rest' => true
+    ];
+
+    register_taxonomy('projects_categories', 'projects', $args);
+});
+
 $names = [
     'name' => 'projects',
     'plural' => 'Projetos',
