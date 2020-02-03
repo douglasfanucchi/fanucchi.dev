@@ -20,11 +20,8 @@
                 <span class="primary-menu__hamburger"></span>
             </button>
             <ul class="primary-menu__list">
-                <li class="primary-menu__item"><a href="">Item menu</a></li>
-                <li class="primary-menu__item"><a href="">Item menu</a></li>
-                <li class="primary-menu__item"><a href="">Item menu</a></li>
-                <li class="primary-menu__item"><a href="">Item menu</a></li>
-                <li class="primary-menu__item"><a href="">Item menu</a></li>
+                <li class="primary-menu__item"><a href="<?php echo site_url() ?>">Home</a></li>
+                <li class="primary-menu__item"><a href="#">Blog (em breve)</a></li>
             </ul>
         </nav>
     </div>
