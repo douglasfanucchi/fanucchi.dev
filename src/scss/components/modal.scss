@@ -35,17 +35,19 @@
         }
     }
 
-    &__useful-links {
-        .list-title {
-            margin-bottom: 5px;
-        }
-
-        padding: 0;
-        list-style: square;
-        font-size: $font-size-base;
-
-        a {
-            color: inherit;
+    &__list {
+        .list {
+            &__title {
+                margin-bottom: 5px;
+            }
+    
+            padding: 0;
+            list-style: square;
+            font-size: $font-size-base;
+    
+            a {
+                color: inherit;
+            }
         }
     }
 

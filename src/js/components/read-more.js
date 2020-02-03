@@ -1,6 +1,8 @@
 export default class ReadMore {
-    constructor($element) {
+    constructor($element, modalState) {
         this.$element = $element
+        this.postID   = $element.getAttribute('data-post-id')
+        this.modalState = modalState
 
         this.bindEventListeners()
     }
@@ -11,6 +13,7 @@ export default class ReadMore {
 
     click = () => {
         this.$itemToActive.classList.add('active')
+        this.modalState.setState(this.postID)
     }
 
     setItemToActive($item) {

@@ -5,9 +5,9 @@ export default function(state) {
     </button>
     <h3 class="modal__title">${state.title} - <a class="modal__demo" target="_blank" href="${state.demo}">Visualizar</a></h3>
     <p class="modal__description">${state.description}</p>
-    <ul class="modal__useful-links">
-        <h4 class="list-title">Links Uteis</h4>
-        ${state.links.map( link => `<li><a href="${link.href}" target="_blank">${link.label}</a></li>` )}
+    <ul class="modal__list">
+        <h4 class="list__title">Tecnologias</h4>
+        ${state.tecnologies.reduce( (store, tecnologie) => store += `<li>${tecnologie}</li>`, '')}
     </ul>
     `;
 }

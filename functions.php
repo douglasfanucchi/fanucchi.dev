@@ -48,3 +48,11 @@ $labels = [
 $project = new PostTypes\PostType($names, $options, $labels);
 $project->icon('dashicons-portfolio');
 $project->register();
+
+add_action('rest_api_init', function() {
+    register_rest_field('projects', 'attributes', [
+        'get_callback' => function($post_arr) {
+            return get_post_meta($post_arr['id'], 'attributes', true);
+        }
+    ]);
+});

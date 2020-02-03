@@ -15,15 +15,6 @@ const $projectsCategories = $projects.querySelector(".projects__categories")
 const $projectsList = $projects.querySelector(".projects__list")
 
 const $modal = $projects.querySelector('.modal');
-$projectsList.querySelectorAll('.item__content').forEach( $itemContent => {
-    const $button = $itemContent.querySelector(".item__read-more") 
-
-    if(!$button || !$modal) return
-
-    const button = new ReadMore($button)
-    
-    button.setItemToActive( $modal )
-})
 
 const body = new Body($body)
 
@@ -35,5 +26,15 @@ window.addEventListener('load', () => {
     const {state: ProjectsState} = new Projects($projects)
     new ProjectsCategories($projectsCategories, ProjectsState)
     new ProjectsList($projectsList, ProjectsState)
-    new Modal($modal)
+    const {state: ModalState} = new Modal($modal)
+
+    $projectsList.querySelectorAll('.item__content').forEach( $itemContent => {
+        const $button = $itemContent.querySelector(".item__read-more") 
+    
+        if(!$button || !$modal) return
+    
+        const button = new ReadMore($button, ModalState)
+        
+        button.setItemToActive( $modal )
+    })
 })

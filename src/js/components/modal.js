@@ -17,25 +17,22 @@ export default class Modal {
                     this.listeners.push(func)
             },
             setState(postID) {
-                fetch(`http://fanucchi.local/wp-json/wp/v2/projects?include[]=${postID}&_fields=title,content,atributos`)
+                fetch(`http://fanucchi.local/wp-json/wp/v2/projects?include[]=${postID}&_fields=title,content,attributes`)
                     .then(r => r.json())
                     .then(json => {
                         const post = json.shift()
-                        console.log(post)
                         this.data.title = post.title.rendered
                         this.data.description = post.content.rendered
-                        this.data.demo = post.atributos.demo
+                        this.data.demo = post.attributes['project-url']
+                        this.data.tecnologies = post.attributes.tecnologies
 
                         this.listeners.forEach( listener => listener(this) )
                     })
             }
         }
 
-        this.render( this.state )
-
         this.$close = $element.querySelector('.modal__close')
 
-        this.bindEventListeners()
         this.bindStateListeners()
     }
 
