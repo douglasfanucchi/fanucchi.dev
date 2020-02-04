@@ -1,6 +1,10 @@
 .header {
     $this: &;
 
+    &__title {
+        font-size: $font-size-h1;
+    }
+
     &__container {
         display: flex;
         justify-content: space-between;

@@ -12,9 +12,13 @@
 
 <header id="header" class="header">
     <div class="header__container container">
-        <figure class="header__logo">
-            <?php echo get_custom_logo() ? get_custom_logo() : bloginfo('name'); ?>
-        </figure>
+        <?php if(has_custom_logo()): ?>
+            <figure class="header__logo">
+                <?php echo get_custom_logo();?>
+            </figure>
+        <?php else: ?>
+            <h1 class="header__title"><?php bloginfo('name'); ?></h1>
+        <?php endif; ?>
         <nav class="primary-menu">
             <button class="primary-menu__hamburger-button">
                 <span class="primary-menu__hamburger"></span>
