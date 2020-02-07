@@ -10,31 +10,38 @@ const $header = document.getElementById("header")
 const $hamburger = $header.querySelector(".primary-menu__hamburger-button")
 const $typeEffect = $body.querySelector(".description__highlight")
 
-const $projects = $body.querySelector(".projects")
-const $projectsCategories = $projects.querySelector(".projects__categories")
-const $projectsList = $projects.querySelector(".projects__list")
-
-const $modal = $projects.querySelector('.modal');
-
 const body = new Body($body)
 
 window.addEventListener('load', () => {
     body.setMarginTop($header)
     new Hamburger($hamburger)
-    new TypeEffect($typeEffect).printWords()
-
-    const {state: ProjectsState} = new Projects($projects)
-    new ProjectsCategories($projectsCategories, ProjectsState)
-    new ProjectsList($projectsList, ProjectsState)
-    const {state: ModalState} = new Modal($modal)
-
-    $projectsList.querySelectorAll('.item__content').forEach( $itemContent => {
-        const $button = $itemContent.querySelector(".item__read-more") 
     
-        if(!$button || !$modal) return
-    
-        const button = new ReadMore($button, ModalState)
+    if( $typeEffect )
+        new TypeEffect($typeEffect).printWords()
+
+    const $projects = $body.querySelector(".projects");
+    let $projectsCategories = undefined
+    let $modal = undefined
+    let $projectsList = undefined
+
+    if( $projects ) {
+        $projectsCategories = $projects.querySelector(".projects__categories")
+        $projectsList = $projects.querySelector(".projects__list")
+        $modal = $projects.querySelector('.modal');
+
+        const {state: ProjectsState} = new Projects($projects)
+        new ProjectsCategories($projectsCategories, ProjectsState)
+        new ProjectsList($projectsList, ProjectsState)
+        const {state: ModalState} = new Modal($modal)
+
+        $projectsList.querySelectorAll('.item__content').forEach( $itemContent => {
+            const $button = $itemContent.querySelector(".item__read-more") 
         
-        button.setItemToActive( $modal )
-    })
+            if(!$button || !$modal) return
+        
+            const button = new ReadMore($button, ModalState)
+            
+            button.setItemToActive( $modal )
+        })
+    }
 })
