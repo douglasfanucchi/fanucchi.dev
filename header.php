@@ -19,14 +19,21 @@
         <?php else: ?>
             <h1 class="header__title"><?php bloginfo('name'); ?></h1>
         <?php endif; ?>
-        <nav class="primary-menu">
-            <button class="primary-menu__hamburger-button">
-                <span class="primary-menu__hamburger"></span>
-            </button>
-            <ul class="primary-menu__list">
-                <li class="primary-menu__item"><a href="<?php echo site_url() ?>">Home</a></li>
-                <li class="primary-menu__item"><a href="#">Blog (em breve)</a></li>
-            </ul>
-        </nav>
+        <?php
+            if( has_nav_menu('primary-menu') )
+                wp_nav_menu([
+                    'theme_location' => 'primary-menu',
+                    'fallback_cb' => false,
+                    'depth' => 1,
+                    'menu_class' => 'primary-menu__list',
+                    'container' => 'nav',
+                    'container_class' => 'primary-menu',
+                    'items_wrap' => '<button class="primary-menu__hamburger-button">
+                                        <span class="primary-menu__hamburger"></span>
+                                    </button>
+                                    <ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'item_class' => 'primary-menu__item'
+                ]);
+        ?>
     </div>
 </header>
