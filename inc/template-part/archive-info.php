@@ -1,4 +1,4 @@
-<section class="archive-info container">
+<section class="section archive-info container">
     <div class="row">
         <div class="col">
             <h1 class="archive-info__title">Blog</h1>
