@@ -1,0 +1,14 @@
+.archive-info {
+    &__title {
+        font-size: $font-size-h2;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: 'Unica One';
+        margin-bottom: 15px;
+    }
+
+    &__description {
+        font-size: $font-size-sm;
+        color: $text-primary;
+    }
+}
