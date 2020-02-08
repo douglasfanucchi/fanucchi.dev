@@ -73,7 +73,10 @@ add_action('rest_api_init', function() {
     ]);
 });
 
-add_filter('nav_menu_css_class', function($classes, $item) {
+add_filter('nav_menu_css_class', function($classes, $item, $args) {
+    if( !$args->theme_location === 'primary-menu' )
+        return $classes;
+
     $classes[] = 'primary-menu__item';
     return $classes;
-}, 10, 2);
+}, 10, 3);
