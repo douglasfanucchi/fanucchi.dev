@@ -1,6 +1,18 @@
 <?php
 require __DIR__ . '/enqueue.php';
 
+function fn_categories() {
+    $categories = get_the_category();
+    $arr = [];
+
+    foreach($categories as $category) {
+        $link = get_term_link($category);
+        $arr[] = "<a href='{$link}'>{$category->name}</a>";
+    }
+
+    return implode(',&nbsp;', $arr);
+}
+
 add_action('after_setup_theme', function() {
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
