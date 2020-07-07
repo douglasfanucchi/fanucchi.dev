@@ -35,7 +35,7 @@
             <li style="background-image: url('<?php echo $thumbnail; ?>')" class="projects__item" data-category="<?php echo get_the_terms($post, 'projects_categories')[0]->slug ?>">
                 <div class="item__content">
                     <h3 class="item__title"><?php echo strip_tags(get_the_title()); ?></h3>
-                    <p class="item__description"><?php echo strip_tags(get_the_content()); ?></p>
+                    <div class="item__description"><?php the_content(); ?></div>
                     <ul class="item__tecnologies">
                         <h3 class="title">Tecnologias: </h3>
                         <?php foreach($tecnologias as $tecnologia): ?>
