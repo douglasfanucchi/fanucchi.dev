@@ -36,14 +36,14 @@ window.addEventListener('load', () => {
         new ProjectsList($projectsList, ProjectsState)
         const {state: ModalState} = new Modal($modal)
 
-        $projectsList.querySelectorAll('.item__content').forEach( $itemContent => {
-            const $button = $itemContent.querySelector(".item__read-more") 
+        // $projectsList.querySelectorAll('.item__content').forEach( $itemContent => {
+        //     const $button = $itemContent.querySelector(".item__read-more") 
         
-            if(!$button || !$modal) return
+        //     if(!$button || !$modal) return
         
-            const button = new ReadMore($button, ModalState)
+        //     const button = new ReadMore($button, ModalState)
             
-            button.setItemToActive( $modal )
-        })
+        //     button.setItemToActive( $modal )
+        // })
     }
 })
