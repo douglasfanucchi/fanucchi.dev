@@ -141,6 +141,8 @@
                     transition: color, background-color 0.2s;
                     font-family: inherit;
                     background-color: $dark;
+                    text-decoration: none;
+                    font-size: $font-size-sm;
                 }
             }
 
