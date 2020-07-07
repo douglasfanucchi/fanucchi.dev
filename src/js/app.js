@@ -14,7 +14,9 @@ const body = new Body($body)
 
 window.addEventListener('load', () => {
     body.setMarginTop($header)
-    new Hamburger($hamburger)
+    
+    if($hamburger) 
+        new Hamburger($hamburger)
     
     if( $typeEffect )
         new TypeEffect($typeEffect).printWords()
