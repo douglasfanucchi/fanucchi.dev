@@ -42,7 +42,7 @@
                         <li class="item__tecnology"><?php echo $tecnologia; ?></li>
                         <?php endforeach; ?>
                     </ul>
-                    <button data-post-id="<?php echo $post->ID; ?>" class="item__read-more">Acessar</button>
+                    <a href="" class="item__read-more">Acessar</a>
                 </div>
             </li>
             <?php
