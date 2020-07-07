@@ -42,7 +42,7 @@
                         <li class="item__tecnology"><?php echo $tecnologia; ?></li>
                         <?php endforeach; ?>
                     </ul>
-                    <a href="" class="item__read-more">Acessar</a>
+                    <a href="<?php echo get_post_meta($post->ID, 'attributes', true)['project-url']; ?>" class="item__read-more">Acessar</a>
                 </div>
             </li>
             <?php
