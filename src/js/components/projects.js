@@ -120,7 +120,7 @@ export class ProjectsList {
     }
 
     organizeItems($items = this.$items) {
-        if(Array.isArray($items) && $items.length == 0)
+        if($items.length == 0)
             return;
 
         const itemOffsetWidth = $items[0].offsetWidth + 5
