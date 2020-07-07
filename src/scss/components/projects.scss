@@ -134,17 +134,13 @@
                     align-self: flex-end;
                     padding: 5px 10px;
                     background: $clear;
-                    color: $dark;
+                    color: $clear;
                     border: 1px solid $dark;
                     opacity: 1;
                     cursor: pointer;
                     transition: color, background-color 0.2s;
                     font-family: inherit;
-
-                    &:hover {
-                        background-color: $dark;
-                        color: $clear;
-                    }
+                    background-color: $dark;
                 }
             }
 
