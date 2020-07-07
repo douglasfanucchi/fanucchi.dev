@@ -84,6 +84,9 @@
                 }
 
                 &__title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                     font-size: $font-size-base;
                     transition: 0.3s all;
                     font-weight: normal;

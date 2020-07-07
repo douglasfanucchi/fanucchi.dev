@@ -34,7 +34,10 @@
             ?>
             <li style="background-image: url('<?php echo $thumbnail; ?>')" class="projects__item" data-category="<?php echo get_the_terms($post, 'projects_categories')[0]->slug ?>">
                 <div class="item__content">
-                    <h3 class="item__title"><?php echo strip_tags(get_the_title()); ?></h3>
+                    <h3 class="item__title">
+                        <?php echo strip_tags(get_the_title()); ?>
+                        <a target="_blank" href="<?php echo get_post_meta($post->ID, 'attributes', true)['project-url']; ?>" class="item__read-more">Acessar</a>
+                    </h3>
                     <div class="item__description"><?php the_content(); ?></div>
                     <ul class="item__tecnologies">
                         <h3 class="title">Tecnologias: </h3>
@@ -42,7 +45,6 @@
                         <li class="item__tecnology"><?php echo $tecnologia; ?></li>
                         <?php endforeach; ?>
                     </ul>
-                    <a target="_blank" href="<?php echo get_post_meta($post->ID, 'attributes', true)['project-url']; ?>" class="item__read-more">Acessar</a>
                 </div>
             </li>
             <?php
