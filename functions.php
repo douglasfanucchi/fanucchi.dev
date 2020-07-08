@@ -35,7 +35,7 @@ add_action('add_meta_boxes', function() {
 
 add_action('add_meta_boxes', function() {
     $qualification_author = new Fanucchi\metaboxes\Attributes(
-        'qualifications_author',
+        'qualification_author',
         'Autor',
         get_template_directory() . '/inc/template-part/metaboxes/qualifications.php',
         'qualification',
@@ -55,6 +55,16 @@ add_action('save_post_projects', function( $post_id, $post, $update ) {
     ];
 
     update_post_meta($post_id, 'attributes', $data);
+}, 10, 3);
+
+add_action('save_post_qualification', function($post_id, $post, $update ) {
+    if( !$update ) return;
+
+    $data = [
+        'author' => $_POST['author']
+    ];
+
+    update_post_meta($post_id, 'qualification_author', $data);
 }, 10, 3);
 
 add_action('init', function() {
