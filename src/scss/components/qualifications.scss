@@ -1,0 +1,31 @@
+.qualifications {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+        list-style: none;
+        flex-shrink: 0;
+        flex-grow: 1;
+        flex-basis: 50%;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .item {
+            &__content {
+                font-size: $font-size-big;
+                line-height: 30px;
+                font-style: italic;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+
+            &__author {
+                font-size: $font-size-base;
+                font-weight: bold;
+            }
+        }
+    }
+}

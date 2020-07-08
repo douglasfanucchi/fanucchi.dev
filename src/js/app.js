@@ -2,7 +2,7 @@ import Body from "./components/body"
 import Hamburger from "./components/hamburger"
 import TypeEffect from "./components/type-effect"
 import { Projects, ProjectsCategories, ProjectsList } from "./components/projects"
-import "slick-carousel"
+import "slick-slider"
 import Modal from "./components/modal"
 
 const $body   = document.querySelector("body")
@@ -45,5 +45,25 @@ window.addEventListener('load', () => {
             
         //     button.setItemToActive( $modal )
         // })
+    }
+
+    const $qualifications = document.querySelector(".qualifications");
+
+    if( $qualifications ) {
+        jQuery($qualifications).slick({
+            slidesToShow: 2,
+            vertical: false,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        })
     }
 })
