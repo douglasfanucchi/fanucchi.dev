@@ -33,6 +33,17 @@ add_action('add_meta_boxes', function() {
     $attributes->register();
 });
 
+add_action('add_meta_boxes', function() {
+    $qualification_author = new Fanucchi\metaboxes\Attributes(
+        'qualifications_author',
+        'Autor',
+        get_template_directory() . '/inc/template-part/metaboxes/qualifications.php',
+        'qualificacao',
+        'advance',
+        'high'
+    );
+});
+
 add_action('save_post_projects', function( $post_id, $post, $update ) {
     if( !$update ) return;
 
@@ -76,6 +87,19 @@ $labels = [
 $project = new PostTypes\PostType($names, $options, $labels);
 $project->icon('dashicons-portfolio');
 $project->register();
+
+$names = [
+    'name' => 'Qualification',
+    'plural' => 'Qualifications',
+    'slug' => 'qualificacao'
+];
+
+$options = [
+    'supports' => ['title', 'editor', 'thumbnail']
+];
+
+$qualifications = new PostTypes\PostType($names, $options);
+$qualifications->register();
 
 add_action('rest_api_init', function() {
     register_rest_field('projects', 'attributes', [
