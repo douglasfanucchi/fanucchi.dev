@@ -38,10 +38,12 @@ add_action('add_meta_boxes', function() {
         'qualifications_author',
         'Autor',
         get_template_directory() . '/inc/template-part/metaboxes/qualifications.php',
-        'qualificacao',
-        'advance',
+        'qualification',
+        'advanced',
         'high'
     );
+
+    $qualification_author->register();
 });
 
 add_action('save_post_projects', function( $post_id, $post, $update ) {
