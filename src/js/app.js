@@ -2,7 +2,7 @@ import Body from "./components/body"
 import Hamburger from "./components/hamburger"
 import TypeEffect from "./components/type-effect"
 import { Projects, ProjectsCategories, ProjectsList } from "./components/projects"
-import ReadMore from "./components/read-more"
+import "slick-carousel"
 import Modal from "./components/modal"
 
 const $body   = document.querySelector("body")

@@ -13,6 +13,7 @@
     "archive": "wpackio-scripts pack"
   },
   "dependencies": {
-    "@wpackio/entrypoint": "^4.3.0"
+    "@wpackio/entrypoint": "^4.3.0",
+    "slick-carousel": "^1.8.1"
   }
 }
