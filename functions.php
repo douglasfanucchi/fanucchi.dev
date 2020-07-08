@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/enqueue.php';
+require __DIR__ . '/helpers.php';
 
 function fn_categories() {
     $categories = get_the_category();
