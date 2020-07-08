@@ -107,7 +107,7 @@ $names = [
 ];
 
 $options = [
-    'supports' => ['title', 'editor', 'thumbnail']
+    'supports' => ['title', 'editor']
 ];
 
 $qualifications = new PostTypes\PostType($names, $options);
