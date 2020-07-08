@@ -57,8 +57,9 @@
             position: absolute;
             transition: 0.2s all;
             background-repeat: no-repeat;
-            background-size: cover;
-            background-position: bottom;
+            background-position: center;
+            background-color: $dark;
+            background-size: 194px auto;
 
             &.hide {
                 transform: scale(0);
