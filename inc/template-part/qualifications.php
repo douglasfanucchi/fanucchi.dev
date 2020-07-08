@@ -8,7 +8,7 @@
 <?php if( $qualifications_query->have_posts() ): ?>
 
     <section class="section container section--qualification">
-        <h2 class="section__title">Depoimentos</h2>
+        <h2 class="section__title"><span>Depoimentos</span></h2>
         <ul class="qualifications">
             <?php while( $qualifications_query->have_posts() ): $qualifications_query->the_post(); ?>
                 <li class="qualifications__item">

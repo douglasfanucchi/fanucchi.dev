@@ -1,7 +1,22 @@
 .section {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 
     &__title {
         font-size: $font-size-h1;
+        margin-bottom: 20px;
+
+        span {
+            display: inline-block;
+
+            &::after {
+                content: " ";
+                display: block;
+                margin-top: 5px;
+                width: 110%;
+                height: 3px;
+                background-color: $dark;
+            }
+        }
     }
 }
