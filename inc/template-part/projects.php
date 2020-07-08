@@ -1,7 +1,8 @@
 <?php
     $terms = get_terms('projects_categories');
 ?>
-<section class="projects container">
+<section class="section section--projects projects container">
+    <h2 class="section__title"><span>Projetos</span></h2>
     <ul class="projects__categories">
         <li class="projects__category active"><button class="button">Todos</button></li>
         <?php
