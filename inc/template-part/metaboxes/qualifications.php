@@ -1,3 +1,3 @@
 <p>
-    <input type="text" name="author" value="<?php echo $this->value('author') ?>" />
+    <input type="text" name="author" <?php $this->value('author'); ?> />
 </p>
