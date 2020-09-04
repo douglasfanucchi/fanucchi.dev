@@ -10,26 +10,47 @@ export default class TypeEffect {
 
     this.$element.innerHTML = '';
 
-    await this.print();
+    const word = this.removeAndReturnFirstItemFromArray(this.words);
+    this.addItemToTheEndOfTheArray(word, this.words);
+
+    await this.printWord(word);
     this.printWords();
   }
 
-  print() {
-    const word = this.words.shift();
+  printWord(word) {
     const letters = word.split('');
-
-    this.words.push(word);
 
     return new Promise((resolve) => {
       const interval = setInterval(() => {
-        if (letters.length === 0) {
-          clearInterval(interval);
-          setTimeout(() => resolve(), 1000);
-          return;
-        }
+        if (this.isArrayEmpty(letters)) return this.nextWord(resolve, interval);
 
-        this.$element.innerHTML += letters.shift();
+        this.$element.innerHTML += this.removeAndReturnFirstItemFromArray(
+          letters,
+        );
       }, this.speed);
     });
+  }
+
+  removeAndReturnFirstItemFromArray(array) {
+    return array.shift();
+  }
+
+  addItemToTheEndOfTheArray(word, wordsArray) {
+    wordsArray.push(word);
+  }
+
+  isArrayEmpty(queue) {
+    return queue.length === 0;
+  }
+
+  nextWord(resolve, interval) {
+    this.clearIntervalAndCallResolve(interval, resolve);
+  }
+
+  clearIntervalAndCallResolve(interval, resolve) {
+    setTimeout(() => {
+      resolve();
+      clearInterval(interval);
+    }, 1000);
   }
 }
