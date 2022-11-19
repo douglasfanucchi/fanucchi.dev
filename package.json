@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@wpackio/scripts": "^4.3.0",
+    "@wpackio/scripts": "^6.4.0",
     "node-sass": "^4.13.1"
   },
   "scripts": {
